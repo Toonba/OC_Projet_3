@@ -1,11 +1,191 @@
-.rouge {
-    background-color: red;
-    width: 100%;
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin: 0;
+}
+* h1 {
+  font-family: "Shrikhand", cursive;
 }
 
-.bleu {
-    background-color: blue;
-    width: 100%;
+.header--accueil {
+  width: 100%;
+}
+.header--accueil img {
+  display: block;
+  width: 200px;
+  margin: auto;
+  padding: 1rem;
+}
+.header--menu {
+  width: 100%;
+  display: flex;
+}
+.header--menu i {
+  display: block;
+  margin-left: 2vw;
+  margin-right: auto;
+}
+.header--menu img {
+  display: block;
+  width: 200px;
+  margin: auto;
+  padding: 1rem;
+}
+.header--menu a {
+  color: black;
+  text-decoration: none;
+}
+
+.localisation {
+  width: 100%;
+  background-color: rgb(238, 237, 237);
+  text-align: center;
+}
+.localisation__ville {
+  box-shadow: inset 0px 5px 20px -18px black;
+  background-color: rgb(227, 226, 226);
+}
+.localisation__ville i {
+  padding: 1rem;
+}
+.localisation__find-restaurant h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 2rem 3rem 1rem 3rem;
+}
+.localisation__find-restaurant p {
+  color: grey;
+  font-size: 1.2rem;
+  padding: 0 0.5rem 1rem 0.5rem;
+}
+.localisation__button {
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to bottom right, #ff79da, #9356dc);
+  box-shadow: 0px 5px 28px -10px black;
+  margin: 1rem 0 3rem 0;
+}
+
+.fonctionnement {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.fonctionnement a {
+  color: black;
+  text-decoration: none;
+}
+.fonctionnement h2 {
+  font-size: 1.5rem;
+  padding: 2rem 0.5rem 1rem;
+}
+.fonctionnement__etapes {
+  position: relative;
+  margin: 1rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 8px lightgrey;
+}
+.fonctionnement__etapes span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background-color: #9356dc;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 7px;
+}
+.fonctionnement__etapes p {
+  padding: 20px 30px;
+}
+.fonctionnement__etapes i {
+  padding-right: 1rem;
+}
+.fonctionnement__etapes:hover {
+  background-color: #f2eafb;
+  box-shadow: 0 0 16px lightgrey;
+}
+.fonctionnement__etapes:hover i {
+  color: #9356dc;
+}
+
+.restaurant {
+  width: 100%;
+  background-color: rgb(238, 237, 237);
+}
+.restaurant a {
+  color: black;
+  text-decoration: none;
+}
+.restaurant h2 {
+  font-size: 1.5rem;
+  padding: 2rem 0.5rem 1rem;
+}
+.restaurant__vignette {
+  position: relative;
+  margin: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px grey;
+}
+.restaurant__vignette img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.restaurant__vignette h3 {
+  padding: 0.4rem 0 0.3rem 0.7rem;
+}
+.restaurant__vignette p {
+  padding: 0 0 0.5rem 0.7rem;
+}
+.restaurant__vignette span {
+  padding: 2px 4px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  background-color: #99e2d0;
+  border-radius: 5px;
+}
+.restaurant__vignette i {
+  position: absolute;
+  bottom: 15px;
+  right: 30px;
+  font-size: 1.5rem;
+}
+.restaurant__vignette i:hover {
+  color: red;
+  background: linear-gradient(#9356dc, #ff79da);
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(52, 51, 51);
+  padding: 1rem;
+}
+footer a {
+  color: black;
+  text-decoration: none;
+}
+footer h1 {
+  color: white;
+  padding: 1rem 0;
+  font-size: 1rem;
+}
+footer p {
+  color: white;
+  padding: 0.2rem 0;
+}
+footer p .fa-utensils {
+  padding-right: 0.7rem;
+}
+footer p .fa-handshake-angle {
+  padding-right: 0.4rem;
 }
 
 /*# sourceMappingURL=style.css.map */

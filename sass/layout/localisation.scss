@@ -1,0 +1,27 @@
+.localisation {
+    width: 100%;
+    background-color: rgb(238, 237, 237);
+    text-align: center;
+    &__ville {
+        box-shadow: inset 0px 5px 20px -18px black;
+        background-color: rgb(227, 226, 226);
+        i {
+            padding: 1rem;
+        }
+    }
+    &__find-restaurant {
+        h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            padding: 2rem 3rem 1rem 3rem;
+        }
+        p {
+            color: grey;
+            font-size: 1.2rem;
+            padding: 0 0.5rem 1rem 0.5rem;
+        }
+    }
+    &__button {
+        @include button;
+    }
+}

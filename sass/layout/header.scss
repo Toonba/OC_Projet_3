@@ -1,0 +1,21 @@
+.header {
+    &--accueil {
+        width: 100%;
+        img {
+            @include header-logo-layout;
+        }
+    }
+    &--menu {
+        width: 100%;
+        display: flex;
+        i {
+            display: block;
+            margin-left: 2vw;
+            margin-right: auto;
+        }
+        img {
+            @include header-logo-layout;
+        }
+        @include link-without-layout;
+    }
+}

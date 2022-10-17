@@ -1,0 +1,38 @@
+.fonctionnement {
+    width: 100%;
+    @include link-without-layout;
+    margin-bottom: 2rem;
+    h2 {
+        font-size: 1.5rem;
+        padding: 2rem 0.5rem 1rem;
+    }
+    &__etapes {
+        position: relative;
+        margin: 1rem 2rem;
+        border-radius: 15px;
+        box-shadow: 0 0 8px lightgrey;
+        span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+            background-color: $primary-color;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 7px;
+        }
+        p {
+            padding: 20px 30px;
+        }
+        i {
+            padding-right: 1rem;
+        }
+        &:hover {
+            background-color: lighten($primary-color, 35%);
+            box-shadow: 0 0 16px lightgrey;
+            i {
+                color: $primary-color;
+            }
+        }
+    }
+}

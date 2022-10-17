@@ -1,0 +1,21 @@
+footer {
+    width: 100%;
+    background-color: rgb(52, 51, 51);
+    padding: 1rem;
+    @include link-without-layout;
+    h1 {
+        color: white;
+        padding: 1rem 0;
+        font-size: 1rem;
+    }
+    p {
+        color: white;
+        padding: 0.2rem 0;
+        .fa-utensils {
+            padding-right: 0.7rem;
+        }
+        .fa-handshake-angle {
+            padding-right: 0.4rem;
+        }
+    }
+}
