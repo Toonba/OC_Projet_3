@@ -20,11 +20,13 @@
 .header--menu {
   width: 100%;
   display: flex;
+  align-items: center;
 }
 .header--menu i {
   display: block;
   margin-left: 2vw;
   margin-right: auto;
+  font-size: 2rem;
 }
 .header--menu img {
   display: block;
@@ -210,6 +212,132 @@
   background: -webkit-linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.photo-restaurant {
+  display: block;
+  width: 80%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  margin: auto;
+}
+@media (max-width: 620px) {
+  .photo-restaurant {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.menu {
+  width: 80%;
+  margin: auto;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  transform: translateY(-80px);
+  background-color: rgb(238, 237, 237);
+  position: relative;
+}
+@media (max-width: 620px) {
+  .menu {
+    width: 100%;
+  }
+}
+.menu h1 {
+  padding: 1rem;
+  font-size: 2.5rem;
+}
+.menu .fa-solid {
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 2.5rem;
+}
+.menu .fa-regular {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 2.5rem;
+}
+.menu .fa-regular:hover + .fa-solid {
+  display: block;
+  background: -webkit-linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__part {
+  display: flex;
+  column-gap: 2vw;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.menu__part a {
+  color: black;
+  text-decoration: none;
+}
+@media (max-width: 620px) {
+  .menu__part {
+    display: block;
+  }
+}
+.menu__part a {
+  width: 30%;
+}
+.menu__part h2 {
+  width: 100%;
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.3rem;
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+@media (max-width: 620px) {
+  .menu__part h2 {
+    text-align: left;
+  }
+}
+.menu__part h2::after {
+  content: "";
+  width: 10%;
+  height: 3px;
+  background: #99e2d0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 620px) {
+  .menu__part h2::after {
+    left: 1rem;
+    transform: translateX(0);
+  }
+}
+.menu__vignette {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 10px grey;
+  padding: 1rem;
+  margin: 1rem;
+}
+.menu__vignette__details {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0 0 0;
+}
+.menu__button {
+  width: 100%;
+  text-align: center;
+}
+.menu__button button {
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to bottom right, #ff79da, #9356dc);
+  box-shadow: 0px 5px 28px -10px black;
+  margin: 1rem 0 3rem 0;
+  cursor: pointer;
 }
 
 footer {
