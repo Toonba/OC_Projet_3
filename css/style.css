@@ -67,19 +67,36 @@
   background: linear-gradient(to bottom right, #ff79da, #9356dc);
   box-shadow: 0px 5px 28px -10px black;
   margin: 1rem 0 3rem 0;
+  cursor: pointer;
 }
 
 .fonctionnement {
   width: 100%;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+  display: flex;
+  column-gap: 2vw;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .fonctionnement a {
   color: black;
   text-decoration: none;
 }
+@media (max-width: 620px) {
+  .fonctionnement {
+    display: block;
+  }
+}
 .fonctionnement h2 {
+  width: 100%;
+  text-align: center;
   font-size: 1.5rem;
-  padding: 2rem 0.5rem 1rem;
+  padding: 1rem 0.5rem 1rem 1rem;
+}
+@media (max-width: 620px) {
+  .fonctionnement h2 {
+    text-align: left;
+  }
 }
 .fonctionnement__etapes {
   position: relative;
@@ -98,7 +115,7 @@
   padding: 2px 7px;
 }
 .fonctionnement__etapes p {
-  padding: 20px 30px;
+  padding: 20px;
 }
 .fonctionnement__etapes i {
   padding-right: 1rem;
@@ -114,18 +131,41 @@
 .restaurant {
   width: 100%;
   background-color: rgb(238, 237, 237);
+  padding-bottom: 2rem;
+  display: flex;
+  column-gap: 2vw;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .restaurant a {
   color: black;
   text-decoration: none;
 }
+.restaurant a {
+  width: 45%;
+}
+@media (max-width: 620px) {
+  .restaurant {
+    display: block;
+  }
+  .restaurant a {
+    width: 100%;
+  }
+}
 .restaurant h2 {
+  width: 100%;
+  text-align: center;
   font-size: 1.5rem;
-  padding: 2rem 0.5rem 1rem;
+  padding: 1rem 0.5rem 1rem 1rem;
+}
+@media (max-width: 620px) {
+  .restaurant h2 {
+    text-align: left;
+  }
 }
 .restaurant__vignette {
   position: relative;
-  margin: 1rem;
+  margin: 0 1rem 2rem 1rem;
   border-radius: 15px;
   box-shadow: 0 0 10px grey;
 }
@@ -152,30 +192,57 @@
   background-color: #99e2d0;
   border-radius: 5px;
 }
-.restaurant__vignette i {
+.restaurant__vignette .fa-solid {
+  display: none;
   position: absolute;
   bottom: 15px;
   right: 30px;
   font-size: 1.5rem;
 }
-.restaurant__vignette i:hover {
-  color: red;
-  background: linear-gradient(#9356dc, #ff79da);
+.restaurant__vignette .fa-regular {
+  position: absolute;
+  bottom: 15px;
+  right: 30px;
+  font-size: 1.5rem;
+}
+.restaurant__vignette .fa-regular:hover + .fa-solid {
+  display: block;
+  background: -webkit-linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 footer {
+  margin-top: 0;
   width: 100%;
   background-color: rgb(52, 51, 51);
   padding: 1rem;
+  display: flex;
+  column-gap: 2vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 footer a {
   color: black;
   text-decoration: none;
 }
+@media (max-width: 620px) {
+  footer {
+    display: block;
+  }
+}
 footer h1 {
+  width: 100%;
   color: white;
   padding: 1rem 0;
   font-size: 1rem;
+  text-align: center;
+}
+@media (max-width: 620px) {
+  footer h1 {
+    text-align: left;
+  }
 }
 footer p {
   color: white;

@@ -2,13 +2,32 @@
     @include link-without-layout;
     width: 100%;
     background-color: rgb(238, 237, 237);
+    padding-bottom: 2rem;
+    display: flex;
+    column-gap: 2vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    a {
+        width: 45%;
+    }
+    @media (max-width: 620px) {
+        display: block;
+        a {
+            width: 100%;
+        }
+    }
     h2 {
+        width: 100%;
+        text-align: center;
         font-size: 1.5rem;
-        padding: 2rem 0.5rem 1rem;
+        padding: 1rem 0.5rem 1rem 1rem;
+        @media (max-width: 620px) {
+            text-align: left;
+        }
     }
     &__vignette {
         position: relative;
-        margin: 1rem;
+        margin: 0 1rem 2rem 1rem;
         border-radius: 15px;
         box-shadow: 0 0 10px grey;
         img {
@@ -34,14 +53,23 @@
             background-color: $ternary-color;
             border-radius: 5px;
         }
-        i {
+        .fa-solid {
+            display: none;
             position: absolute;
             bottom: 15px;
             right: 30px;
             font-size: 1.5rem;
-            &:hover {
-                color: red;
-                background: linear-gradient($primary-color, $secondary-color);
+        }
+        .fa-regular {
+            position: absolute;
+            bottom: 15px;
+            right: 30px;
+            font-size: 1.5rem;
+            &:hover + .fa-solid {
+                display: block;
+                background: -webkit-linear-gradient($primary-color, $secondary-color);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         }
     }
