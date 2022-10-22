@@ -8,6 +8,53 @@
   font-family: "Shrikhand", cursive;
 }
 
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  animation: loader-disapear 3s ease-in-out;
+}
+@keyframes loader-disapear {
+  0% {
+    opacity: 1;
+    z-index: 1;
+  }
+  99% {
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: 1;
+  }
+}
+.loader .fa-magnifying-glass,
+.loader .fa-fork {
+  font-size: 5rem;
+  color: lightblue;
+  z-index: 3;
+  animation: loader 3s ease-in-out both;
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+    transform: rotate(-1080deg);
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+}
+
 .header--accueil {
   width: 100%;
 }
@@ -67,9 +114,13 @@
   border: none;
   border-radius: 50px;
   background: linear-gradient(to bottom right, #ff79da, #9356dc);
-  box-shadow: 0px 5px 28px -10px black;
+  box-shadow: 0px 5px 28px -8px black;
   margin: 1rem 0 3rem 0;
   cursor: pointer;
+}
+.localisation__button:hover {
+  background: linear-gradient(to bottom right, #ff8de0, #9e67e0);
+  box-shadow: 0 5px 20px -2px black;
 }
 
 .fonctionnement {
@@ -213,6 +264,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.restaurant__vignette .fa-regular:hover {
+  opacity: 0;
+}
 
 .photo-restaurant {
   display: block;
@@ -266,6 +320,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.menu .fa-regular:hover {
+  opacity: 0;
+}
 .menu__part {
   display: flex;
   column-gap: 2vw;
@@ -275,6 +332,33 @@
 .menu__part a {
   color: black;
   text-decoration: none;
+}
+.menu__part .delay-1 {
+  animation-delay: 150ms;
+}
+.menu__part .delay-2 {
+  animation-delay: 300ms;
+}
+.menu__part .delay-3 {
+  animation-delay: 450ms;
+}
+.menu__part .delay-4 {
+  animation-delay: 600ms;
+}
+.menu__part .delay-5 {
+  animation-delay: 750ms;
+}
+.menu__part .delay-6 {
+  animation-delay: 900ms;
+}
+.menu__part .delay-7 {
+  animation-delay: 1050ms;
+}
+.menu__part .delay-8 {
+  animation-delay: 1200ms;
+}
+.menu__part .delay-9 {
+  animation-delay: 1350ms;
 }
 @media (max-width: 620px) {
   .menu__part {
@@ -317,13 +401,75 @@
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 0 10px grey;
-  padding: 1rem;
+  padding: 0;
   margin: 1rem;
-}
-.menu__vignette__details {
   display: flex;
-  justify-content: space-between;
-  padding: 0.4rem 0 0 0;
+  justify-content: flex-start;
+  overflow: hidden;
+  animation: card-apparition 1000ms ease-in-out both;
+}
+@keyframes card-apparition {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.menu__vignette:hover .menu__vignette__check {
+  margin-right: 0;
+}
+.menu__vignette:hover .fa-check {
+  animation: check-rotate 500ms ease-in-out 150ms;
+}
+@keyframes check-rotate {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.menu__vignette__description {
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+}
+.menu__vignette__description h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menu__vignette__description p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menu__vignette__prix {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-left: auto;
+}
+.menu__vignette__check {
+  background-color: #99e2d0;
+  width: 3rem;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-right: -3rem;
+  display: flex;
+  justify-content: center;
+  transition: margin-right 500ms ease-in-out;
+}
+.menu__vignette__check .fa-check {
+  background-color: white;
+  font-size: 0.8rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  color: #99e2d0;
+  margin: auto;
 }
 .menu__button {
   width: 100%;
@@ -335,9 +481,13 @@
   border: none;
   border-radius: 50px;
   background: linear-gradient(to bottom right, #ff79da, #9356dc);
-  box-shadow: 0px 5px 28px -10px black;
+  box-shadow: 0px 5px 28px -8px black;
   margin: 1rem 0 3rem 0;
   cursor: pointer;
+}
+.menu__button button:hover {
+  background: linear-gradient(to bottom right, #ff8de0, #9e67e0);
+  box-shadow: 0 5px 20px -2px black;
 }
 
 footer {
@@ -372,14 +522,14 @@ footer h1 {
     text-align: left;
   }
 }
-footer p {
+footer a {
   color: white;
   padding: 0.2rem 0;
 }
-footer p .fa-utensils {
+footer a .fa-utensils {
   padding-right: 0.7rem;
 }
-footer p .fa-handshake-angle {
+footer a .fa-handshake-angle {
   padding-right: 0.4rem;
 }
 
