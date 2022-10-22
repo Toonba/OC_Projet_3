@@ -54,7 +54,7 @@
         column-gap: 2vw;
         flex-wrap: wrap;
         justify-content: center;
-        @for $i from 1 to 10 {
+        @for $i from 1 to 11 {
             .delay-#{$i} {
                 animation-delay: 150ms * $i;
             }

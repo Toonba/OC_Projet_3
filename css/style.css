@@ -360,6 +360,9 @@
 .menu__part .delay-9 {
   animation-delay: 1350ms;
 }
+.menu__part .delay-10 {
+  animation-delay: 1500ms;
+}
 @media (max-width: 620px) {
   .menu__part {
     display: block;
