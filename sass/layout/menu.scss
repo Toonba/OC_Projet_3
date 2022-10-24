@@ -16,29 +16,32 @@
     margin: auto;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    transform: translateY(-80px);
+    margin-top: -80px;
     background-color: rgb(238, 237, 237);
     position: relative;
     @media (max-width: 620px) {
         width: 100%;
     }
     h1 {
+        position: relative;
         padding: 1rem;
-        font-size: 8vw;
-        width: 85%;
+        font-size: 4vw;
+        width: 100%;
     }
     .fa-solid {
         display: none;
         position: absolute;
-        top: 22px;
-        right: 15px;
-        font-size: 8vw;
+        top: 50%;
+        right: 2vw;
+        font-size: 4vw;
+        transform: translateY(-50%);
     }
     .fa-regular {
         position: absolute;
-        top: 22px;
-        right: 15px;
-        font-size: 8vw;
+        top:50%;
+        right: 2vw;
+        font-size: 4vw;
+        transform: translateY(-50%);
         &:hover + .fa-solid {
             display: block;
             background: -webkit-linear-gradient($primary-color, $secondary-color);
@@ -64,7 +67,7 @@
             display: block;
         }
         a {
-            width: 30%;
+            width: 40%;
         }
         h2 {
             width: 100%;
