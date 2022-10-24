@@ -24,20 +24,21 @@
     }
     h1 {
         padding: 1rem;
-        font-size: 2.5rem;
+        font-size: 8vw;
+        width: 85%;
     }
     .fa-solid {
         display: none;
         position: absolute;
-        top: 25px;
-        right: 30px;
-        font-size: 2.5rem;
+        top: 22px;
+        right: 15px;
+        font-size: 8vw;
     }
     .fa-regular {
         position: absolute;
-        top: 25px;
-        right: 30px;
-        font-size: 2.5rem;
+        top: 22px;
+        right: 15px;
+        font-size: 8vw;
         &:hover + .fa-solid {
             display: block;
             background: -webkit-linear-gradient($primary-color, $secondary-color);
