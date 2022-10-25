@@ -46,5 +46,11 @@
                 color: $primary-color;
             }
         }
+        @media (max-width: 620px) {
+            &:active {
+                background-color: lighten($primary-color, 35%);
+                box-shadow: 0 0 16px lightgrey;
+            }
+        }
     }
 }

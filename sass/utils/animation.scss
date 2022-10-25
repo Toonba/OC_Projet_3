@@ -1,0 +1,63 @@
+/*animation that make the check mark rotate*/
+@keyframes check-rotate {
+    0% {
+        transform: rotate(-270deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/*Animation that make meal card appear on the menu*/
+@keyframes card-apparition {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Animation that make the 3 logo scroll from left to right on the loader*/
+@keyframes loader-scroll {
+    0% {
+        opacity: 1;
+        transform: translateX(-28rem);
+    }
+    25%,
+    30% {
+        opacity: 1;
+        transform: translateX(-14rem);
+    }
+    50%,
+    55% {
+        opacity: 1;
+        transform: translateX(0.3rem);
+    }
+    75%,
+    80% {
+        opacity: 1;
+        transform: translateX(14rem);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(30rem);
+    }
+}
+
+/*Animation that made the loading screen disapears*/
+@keyframes loader-disapear {
+    0% {
+        z-index: 2;
+        opacity: 1;
+    }
+    99% {z-index: 2;
+        opacity: 1;
+    }
+    100% {
+        z-index: 0;
+        opacity: 0;
+    }
+}

@@ -1,10 +1,14 @@
 @import "./Base/base.scss";
 @import "./utils/variables.scss";
 @import "./utils/mixin.scss";
+@import "./utils/animation.scss";
 @import "./layout/loader.scss";
 @import "./layout/header.scss";
 @import "./layout/localisation.scss";
 @import "./layout/fonctionnement.scss";
 @import "./layout/restaurant.scss";
+@import "./composants/imageRestaurant.scss";
+@import "./composants/menuPart.scss";
+@import "./composants/menuCard.scss";
 @import "./layout/menu.scss";
 @import "./layout/footer.scss";

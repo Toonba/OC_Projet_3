@@ -1,0 +1,12 @@
+.photo-restaurant {
+    display: block;
+    width: 80%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    margin: auto;
+    @media (max-width: 620px) {
+        width: 100%;
+        height: 300px;
+    }
+}

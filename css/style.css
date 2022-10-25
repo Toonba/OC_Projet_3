@@ -8,42 +8,34 @@
   font-family: "Shrikhand", cursive;
 }
 
-.loader {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: loader-disapear 3s ease-in-out both;
-  background-color: rgb(227, 226, 226);
-  z-index: 2;
+/*mixin to put link as normal text*/
+/*Mixin for the disposition of logo in the header*/
+/*Mixin for the layout of the main button*/
+/*Mixin to put an ellipsis at the end of the text in the meal card when their is not enought space*/
+/*Mixin related to the position of the 2 hearts on card restaurant on the main page and also on the menu page
+Solid one is hidden until user hover or active the regular one */
+/*animation that make the check mark rotate*/
+@keyframes check-rotate {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
-.loader__icone--visible {
-  width: 15rem;
-  height: 15rem;
-  border-radius: 50%;
-  border: solid 1px #9356dc;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/*Animation that make meal card appear on the menu*/
+@keyframes card-apparition {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.loader__icone--hidden {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: defilement 3s ease-in-out both;
-}
-.loader__icone--hidden .fa-solid {
-  display: inline;
-  color: #9356dc;
-  font-size: 6rem;
-  margin: 0;
-  padding: 0 4rem;
-}
-
-@keyframes defilement {
+/*Animation that make the 3 logo scroll from left to right on the loader*/
+@keyframes loader-scroll {
   0% {
     opacity: 1;
     transform: translateX(-28rem);
@@ -65,6 +57,7 @@
     transform: translateX(30rem);
   }
 }
+/*Animation that made the loading screen disapears*/
 @keyframes loader-disapear {
   0% {
     z-index: 2;
@@ -79,7 +72,42 @@
     opacity: 0;
   }
 }
-.header--accueil {
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loader-disapear 3s ease-in-out;
+  background-color: rgb(227, 226, 226);
+  z-index: -1;
+  opacity: 0;
+}
+.loader__icone--visible {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: solid 1px #9356dc;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader__icone--hidden {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loader-scroll 3s ease-in-out both;
+}
+.loader__icone--hidden .fa-solid {
+  color: #9356dc;
+  font-size: 6rem;
+  margin: 0;
+  padding: 0 4rem;
+}
+
+.header--accueil { /*Header for the home page*/
   width: 100%;
 }
 .header--accueil img {
@@ -88,7 +116,7 @@
   margin: auto;
   padding: 1rem;
 }
-.header--menu {
+.header--menu { /*Header for the menu pages*/
   width: 100%;
   display: flex;
   align-items: center;
@@ -204,6 +232,12 @@
 .fonctionnement__etapes:hover i {
   color: #9356dc;
 }
+@media (max-width: 620px) {
+  .fonctionnement__etapes:active {
+    background-color: #f2eafb;
+    box-shadow: 0 0 16px lightgrey;
+  }
+}
 
 .restaurant {
   width: 100%;
@@ -241,10 +275,20 @@
   }
 }
 .restaurant__vignette {
-  position: relative;
   margin: 0 1rem 2rem 1rem;
   border-radius: 15px;
   box-shadow: 0 0 10px grey;
+  position: relative;
+}
+.restaurant__vignette span {
+  /*Allow to put a "new" pop-up on the restaurant card, need to add <span>Nouveau</span> just below the image in HTML*/
+  padding: 2px 4px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  background-color: #99e2d0;
+  border-radius: 5px;
 }
 .restaurant__vignette img {
   width: 100%;
@@ -254,42 +298,62 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.restaurant__vignette h3 {
+.restaurant__vignette__details {
+  position: relative;
+}
+.restaurant__vignette__details h3 {
   padding: 0.4rem 0 0.3rem 0.7rem;
 }
-.restaurant__vignette p {
+.restaurant__vignette__details p {
   padding: 0 0 0.5rem 0.7rem;
 }
-.restaurant__vignette span {
-  padding: 2px 4px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: white;
-  background-color: #99e2d0;
-  border-radius: 5px;
+.restaurant__vignette__details h1 {
+  position: relative;
 }
-.restaurant__vignette .fa-solid {
+.restaurant__vignette__details .fa-solid {
   display: none;
   position: absolute;
-  bottom: 15px;
-  right: 20px;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
   font-size: 1.5rem;
 }
-.restaurant__vignette .fa-regular {
+@media (max-width: 620px) {
+  .restaurant__vignette__details .fa-solid {
+    font-size: 1.5rem;
+  }
+}
+.restaurant__vignette__details .fa-regular {
   position: absolute;
-  bottom: 15px;
-  right: 20px;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
   font-size: 1.5rem;
 }
-.restaurant__vignette .fa-regular:hover + .fa-solid {
+.restaurant__vignette__details .fa-regular:hover + .fa-solid {
+  /*Hover on regular heart that make the solid appears. Solide one is colored with a gradient of primary and secondary color*/
   display: block;
   background: -webkit-linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.restaurant__vignette .fa-regular:hover {
+.restaurant__vignette__details .fa-regular:hover {
+  /*to make regular heart disapear*/
   opacity: 0;
+}
+@media (max-width: 620px) {
+  .restaurant__vignette__details .fa-regular {
+    font-size: 1.5rem;
+  }
+  .restaurant__vignette__details .fa-regular:active + .fa-solid {
+    display: block;
+    background: -webkit-linear-gradient(#9356dc, #ff79da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .restaurant__vignette__details .fa-regular:active {
+    opacity: 0;
+  }
 }
 
 .photo-restaurant {
@@ -307,50 +371,7 @@
   }
 }
 
-.menu {
-  width: 80%;
-  margin: auto;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  margin-top: -80px;
-  background-color: rgb(238, 237, 237);
-  position: relative;
-}
-@media (max-width: 620px) {
-  .menu {
-    width: 100%;
-  }
-}
-.menu h1 {
-  position: relative;
-  padding: 1rem;
-  font-size: 4vw;
-  width: 100%;
-}
-.menu .fa-solid {
-  display: none;
-  position: absolute;
-  top: 50%;
-  right: 2vw;
-  font-size: 4vw;
-  transform: translateY(-50%);
-}
-.menu .fa-regular {
-  position: absolute;
-  top: 50%;
-  right: 2vw;
-  font-size: 4vw;
-  transform: translateY(-50%);
-}
-.menu .fa-regular:hover + .fa-solid {
-  display: block;
-  background: -webkit-linear-gradient(#9356dc, #ff79da);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.menu .fa-regular:hover {
-  opacity: 0;
-}
+/*This file contain SCSS rules for the layout of menu part */
 .menu__part {
   display: flex;
   column-gap: 2vw;
@@ -412,7 +433,7 @@
     text-align: left;
   }
 }
-.menu__part h2::after {
+.menu__part h2::after { /*small green text decoration*/
   content: "";
   width: 10%;
   height: 3px;
@@ -428,6 +449,8 @@
     transform: translateX(0);
   }
 }
+
+/*This files contain SCSS rules to modify appearence of meal cards*/
 .menu__vignette {
   background-color: white;
   border-radius: 15px;
@@ -439,33 +462,24 @@
   overflow: hidden;
   animation: card-apparition 1000ms ease-in-out both;
 }
-@keyframes card-apparition {
-  0% {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .menu__vignette:hover .menu__vignette__check {
   margin-right: 0;
 }
 .menu__vignette:hover .fa-check {
   animation: check-rotate 500ms ease-in-out 150ms;
 }
-@keyframes check-rotate {
-  0% {
-    transform: rotate(-270deg);
+@media (max-width: 620px) {
+  .menu__vignette:active .menu__vignette__check {
+    margin-right: 0;
   }
-  100% {
-    transform: rotate(0deg);
+  .menu__vignette:active .fa-check {
+    animation: check-rotate 500ms ease-in-out 150ms;
   }
 }
 .menu__vignette__description {
   overflow: hidden;
   padding: 0.5rem 1rem;
+  width: 90%;
 }
 .menu__vignette__description h3 {
   overflow: hidden;
@@ -501,6 +515,85 @@
   border-radius: 50%;
   color: #99e2d0;
   margin: auto;
+}
+
+/*This files gather 
+- layout, 
+- H1, 
+- heart
+- button 
+for the layout of the menu for each restaurant*/
+.menu {
+  width: 80%;
+  margin: auto;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: -80px;
+  background-color: rgb(238, 237, 237);
+  position: relative;
+}
+@media (max-width: 620px) {
+  .menu {
+    width: 100%;
+  }
+}
+.menu h1 {
+  padding: 1rem;
+  font-size: 4vw;
+  width: 100%;
+}
+@media (max-width: 620px) {
+  .menu h1 {
+    font-size: 1.5rem;
+  }
+}
+.menu h1 {
+  position: relative;
+}
+.menu .fa-solid {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  font-size: 4vw;
+}
+@media (max-width: 620px) {
+  .menu .fa-solid {
+    font-size: 1.5rem;
+  }
+}
+.menu .fa-regular {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  font-size: 4vw;
+}
+.menu .fa-regular:hover + .fa-solid {
+  /*Hover on regular heart that make the solid appears. Solide one is colored with a gradient of primary and secondary color*/
+  display: block;
+  background: -webkit-linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu .fa-regular:hover {
+  /*to make regular heart disapear*/
+  opacity: 0;
+}
+@media (max-width: 620px) {
+  .menu .fa-regular {
+    font-size: 1.5rem;
+  }
+  .menu .fa-regular:active + .fa-solid {
+    display: block;
+    background: -webkit-linear-gradient(#9356dc, #ff79da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .menu .fa-regular:active {
+    opacity: 0;
+  }
 }
 .menu__button {
   width: 100%;
@@ -554,6 +647,7 @@ footer h1 {
   }
 }
 footer a {
+  display: block;
   color: white;
   padding: 0.2rem 0;
 }
