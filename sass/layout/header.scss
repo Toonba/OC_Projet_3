@@ -1,11 +1,13 @@
 .header {
-    &--accueil {/*Header for the home page*/
+    &--accueil {
+        /*Header for the home page*/
         width: 100%;
         img {
             @include header-logo-layout;
         }
     }
-    &--menu { /*Header for the menu pages*/
+    &--menu {
+        /*Header for the menu pages*/
         width: 100%;
         display: flex;
         align-items: center;

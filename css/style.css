@@ -73,7 +73,10 @@ Solid one is hidden until user hover or active the regular one */
   }
 }
 .loader {
-  position: absolute;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   display: flex;
@@ -107,7 +110,8 @@ Solid one is hidden until user hover or active the regular one */
   padding: 0 4rem;
 }
 
-.header--accueil { /*Header for the home page*/
+.header--accueil {
+  /*Header for the home page*/
   width: 100%;
 }
 .header--accueil img {
@@ -116,7 +120,8 @@ Solid one is hidden until user hover or active the regular one */
   margin: auto;
   padding: 1rem;
 }
-.header--menu { /*Header for the menu pages*/
+.header--menu {
+  /*Header for the menu pages*/
   width: 100%;
   display: flex;
   align-items: center;
@@ -311,12 +316,13 @@ Solid one is hidden until user hover or active the regular one */
   position: relative;
 }
 .restaurant__vignette__details .fa-solid {
-  display: none;
+  opacity: 0;
   position: absolute;
   top: 50%;
   right: 30px;
   transform: translateY(-50%);
   font-size: 1.5rem;
+  z-index: 0;
 }
 @media (max-width: 620px) {
   .restaurant__vignette__details .fa-solid {
@@ -329,10 +335,12 @@ Solid one is hidden until user hover or active the regular one */
   right: 30px;
   transform: translateY(-50%);
   font-size: 1.5rem;
+  z-index: 1;
 }
 .restaurant__vignette__details .fa-regular:hover + .fa-solid {
   /*Hover on regular heart that make the solid appears. Solide one is colored with a gradient of primary and secondary color*/
-  display: block;
+  opacity: 1;
+  transition: opacity 500ms;
   background: -webkit-linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -340,6 +348,7 @@ Solid one is hidden until user hover or active the regular one */
 .restaurant__vignette__details .fa-regular:hover {
   /*to make regular heart disapear*/
   opacity: 0;
+  transition: opacity 500ms;
 }
 @media (max-width: 620px) {
   .restaurant__vignette__details .fa-regular {
@@ -551,12 +560,13 @@ for the layout of the menu for each restaurant*/
   position: relative;
 }
 .menu .fa-solid {
-  display: none;
+  opacity: 0;
   position: absolute;
   top: 50%;
   right: 30px;
   transform: translateY(-50%);
   font-size: 4vw;
+  z-index: 0;
 }
 @media (max-width: 620px) {
   .menu .fa-solid {
@@ -569,10 +579,12 @@ for the layout of the menu for each restaurant*/
   right: 30px;
   transform: translateY(-50%);
   font-size: 4vw;
+  z-index: 1;
 }
 .menu .fa-regular:hover + .fa-solid {
   /*Hover on regular heart that make the solid appears. Solide one is colored with a gradient of primary and secondary color*/
-  display: block;
+  opacity: 1;
+  transition: opacity 500ms;
   background: -webkit-linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -580,6 +592,7 @@ for the layout of the menu for each restaurant*/
 .menu .fa-regular:hover {
   /*to make regular heart disapear*/
   opacity: 0;
+  transition: opacity 500ms;
 }
 @media (max-width: 620px) {
   .menu .fa-regular {
