@@ -1,11 +1,11 @@
+/*File containing SCSS used for the layout of the 3 card explaining how this website works*/
+
 .fonctionnement {
     width: 100%;
     @include link-without-layout;
     margin: 2rem 0;
-    display: flex;
+    @include flexbox(center,center, wrap);
     column-gap: 2vw;
-    flex-wrap: wrap;
-    justify-content: center;
     @media (max-width: 620px) {
         display: block;
     }

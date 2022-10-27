@@ -9,8 +9,7 @@
     &--menu {
         /*Header for the menu pages*/
         width: 100%;
-        display: flex;
-        align-items: center;
+        @include flexbox(flex-start, center, nowrap);
         i {
             display: block;
             margin-left: 2vw;

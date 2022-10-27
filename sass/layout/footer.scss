@@ -4,11 +4,8 @@ footer {
     background-color: $footer-color;
     padding: 1rem;
     @include link-without-layout;
-    display: flex;
+    @include flexbox;
     column-gap: 2vw;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     @media (max-width: 620px) {
         display: block;
     }

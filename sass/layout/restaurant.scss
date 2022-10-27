@@ -1,20 +1,16 @@
+/*Fil gathering SCSS for restaurant's section on the home page 
+it allow a flex disposition with wrap for the restaurant card and also allow to add the "new" green div if needed*/
+
 .restaurant {
     @include link-without-layout;
     width: 100%;
     background-color: rgb(238, 237, 237);
     padding-bottom: 2rem;
-    display: flex;
-    column-gap: 2vw;
-    flex-wrap: wrap;
-    justify-content: center;
-    a {
-        width: 45%;
-    }
+    column-gap: 2rem;
+    row-gap: 2rem;
+    @include flexbox;
     @media (max-width: 620px) {
         display: block;
-        a {
-            width: 100%;
-        }
     }
     h2 {
         width: 100%;
@@ -25,8 +21,25 @@
             text-align: left;
         }
     }
-    &__vignette {
-        margin: 0 1rem 2rem 1rem;
+    @include heart-placement--homepage;
+    &__card {
+        width: 40%;
+        a {
+            display: block;
+            width: 100%;
+            @media (max-width: 620px) {
+                width: 100%;
+                margin: auto;
+                margin-bottom: 2rem;
+            }
+        }
+        @media (max-width: 620px) {
+            width: 90%;
+            margin: auto;
+            margin-bottom: 2rem;
+        }
+    }
+    &__link {
         border-radius: 15px;
         box-shadow: 0 0 10px grey;
         position: relative;
@@ -48,15 +61,14 @@
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
         }
-        &__details {
-            position: relative;
-            h3 {
-                padding: 0.4rem 0 0.3rem 0.7rem;
-            }
-            p {
-                padding: 0 0 0.5rem 0.7rem;
-            }
-            @include heart-placement;
+    }
+    &__details {
+        position: relative;
+        h3 {
+            padding: 0.4rem 0 0.3rem 0.7rem;
+        }
+        p {
+            padding: 0 0 0.5rem 0.7rem;
         }
     }
 }

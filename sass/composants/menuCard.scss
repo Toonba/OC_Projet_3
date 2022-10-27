@@ -38,9 +38,7 @@
         }
         &__prix {
             padding: 0.5rem;
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
+            @include flexbox(flex-end, flex-end, nowrap);
             margin-left: auto;
         }
         &__check {

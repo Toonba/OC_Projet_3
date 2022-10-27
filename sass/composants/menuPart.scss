@@ -3,10 +3,9 @@
 .menu {
     &__part {
         @include link-without-layout;
-        display: flex;
+        @include flexbox(center, center, nowrap);
+        flex-direction: column;
         column-gap: 2vw;
-        flex-wrap: wrap;
-        justify-content: center;
         @for $i from 1 to 11 {
             .delay-#{$i} {
                 animation-delay: 150ms * $i;
@@ -16,7 +15,7 @@
             display: block;
         }
         a {
-            width: 40%;
+            width: 60%;
         }
         h2 {
             width: 100%;
