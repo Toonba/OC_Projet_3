@@ -2,6 +2,7 @@
 
 .menu {
     &__vignette {
+        width:60%;
         background-color: white;
         border-radius: 15px;
         box-shadow: 0 0 10px grey;
@@ -18,6 +19,7 @@
             animation: check-rotate 500ms ease-in-out 150ms;
         }
         @media (max-width: 620px) {
+            width:90%;
             &:active .menu__vignette__check {
                 margin-right: 0;
             }

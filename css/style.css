@@ -195,10 +195,6 @@ Solid one is hidden until user hover or active the regular one */
   flex-wrap: wrap;
   column-gap: 2vw;
 }
-.fonctionnement a {
-  color: black;
-  text-decoration: none;
-}
 @media (max-width: 620px) {
   .fonctionnement {
     display: block;
@@ -328,6 +324,7 @@ it allow a flex disposition with wrap for the restaurant card and also allow to 
   right: 10px;
   font-size: 1.5rem;
   z-index: 1;
+  cursor: pointer;
 }
 @media (max-width: 620px) {
   .restaurant .fa-regular {
@@ -411,7 +408,6 @@ it allow a flex disposition with wrap for the restaurant card and also allow to 
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: column;
-  column-gap: 2vw;
 }
 .menu__part a {
   color: black;
@@ -447,14 +443,6 @@ it allow a flex disposition with wrap for the restaurant card and also allow to 
 .menu__part .delay-10 {
   animation-delay: 1500ms;
 }
-@media (max-width: 620px) {
-  .menu__part {
-    display: block;
-  }
-}
-.menu__part a {
-  width: 60%;
-}
 .menu__part h2 {
   width: 100%;
   text-align: center;
@@ -487,6 +475,7 @@ it allow a flex disposition with wrap for the restaurant card and also allow to 
 
 /*This files contain SCSS rules to modify appearence of meal cards*/
 .menu__vignette {
+  width: 60%;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 0 10px grey;
@@ -504,6 +493,9 @@ it allow a flex disposition with wrap for the restaurant card and also allow to 
   animation: check-rotate 500ms ease-in-out 150ms;
 }
 @media (max-width: 620px) {
+  .menu__vignette {
+    width: 90%;
+  }
   .menu__vignette:active .menu__vignette__check {
     margin-right: 0;
   }

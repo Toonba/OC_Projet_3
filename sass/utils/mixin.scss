@@ -82,6 +82,7 @@ Solid one is hidden until user hover or active the regular one */
         right: 10px;
         font-size: $fontsize-destktop;
         z-index: 1;
+        cursor: pointer;
         @media (max-width: 620px) {
             font-size: $fontsize-mobile;
         }

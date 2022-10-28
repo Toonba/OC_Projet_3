@@ -2,7 +2,6 @@
 
 .fonctionnement {
     width: 100%;
-    @include link-without-layout;
     margin: 2rem 0;
     @include flexbox(center,center, wrap);
     column-gap: 2vw;
