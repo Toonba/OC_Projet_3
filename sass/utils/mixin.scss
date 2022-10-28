@@ -37,6 +37,20 @@
     white-space: nowrap;
 }
 
+/*Mixin to setup positionnement of heart in mixin heart placement according to is location ie homepage or menupage*/
+@mixin heart-position--homepage{
+    position: absolute;
+    top: 82%;
+    right: 10px;
+}
+
+@mixin heart-position--menupage{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
 /*Mixin related to the position of the 2 hearts on card restaurant on the main page and also on the menu page
 Solid one is hidden until user hover or active the regular one */
 @mixin heart-placement--homepage($fontsize-destktop: 1.5rem, $fontsize-mobile: 1.5rem) {
@@ -44,14 +58,10 @@ Solid one is hidden until user hover or active the regular one */
         position: relative;
     }
     .custom-checkbox {
-        position: absolute;
-        top: 82%;
-        right: 10px;
+        @include heart-position--homepage;
     }
     .custom-checkbox input[type="checkbox"] {
-        position: absolute;
-        top: 82%;
-        right: 10px;
+        @include heart-position--homepage;
         width: 1.5rem;
         height: 1.5rem;
         opacity: 0;
@@ -64,25 +74,19 @@ Solid one is hidden until user hover or active the regular one */
     }
     .fa-solid {
         opacity: 0;
-        position: absolute;
-        top: 82%;
-        right: 10px;
+        @include heart-position--homepage;
         font-size: $fontsize-destktop;
-        z-index: 0;
         background: -webkit-linear-gradient($primary-color, $secondary-color);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        cursor: pointer;
         @media (max-width: 620px) {
             font-size: $fontsize-mobile;
         }
     }
     .fa-regular {
-        position: absolute;
-        top: 82%;
-        right: 10px;
+        @include heart-position--homepage;
         font-size: $fontsize-destktop;
-        z-index: 1;
-        cursor: pointer;
         @media (max-width: 620px) {
             font-size: $fontsize-mobile;
         }
@@ -94,16 +98,10 @@ Solid one is hidden until user hover or active the regular one */
         position: relative;
     }
     .custom-checkbox {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
+        @include heart-position--menupage;
     }
     .custom-checkbox input[type="checkbox"] {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
+        @include heart-position--menupage;
         width: 1.5rem;
         height: 1.5rem;
         opacity: 0;
@@ -116,10 +114,8 @@ Solid one is hidden until user hover or active the regular one */
     }
     .fa-solid {
         opacity: 0;
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
+        @include heart-position--menupage;
+        cursor: pointer;
         font-size: $fontsize-destktop;
         z-index: 0;
         background: -webkit-linear-gradient($primary-color, $secondary-color);
@@ -130,10 +126,7 @@ Solid one is hidden until user hover or active the regular one */
         }
     }
     .fa-regular {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
+        @include heart-position--menupage;
         font-size: $fontsize-destktop;
         z-index: 1;
         @media (max-width: 620px) {
