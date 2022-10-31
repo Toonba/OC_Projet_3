@@ -23,7 +23,7 @@ for the layout of the menu for each restaurant*/
             font-size: 1.5rem;
         }
     }
-    @include heart-placement--menupage(4vw);
+    @include heart-placement--menupage;
     &__button {
         width: 100%;
         text-align: center;

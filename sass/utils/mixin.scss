@@ -38,13 +38,13 @@
 }
 
 /*Mixin to setup positionnement of heart in mixin heart placement according to is location ie homepage or menupage*/
-@mixin heart-position--homepage{
+@mixin heart-position--homepage {
     position: absolute;
     top: 82%;
     right: 10px;
 }
 
-@mixin heart-position--menupage{
+@mixin heart-position--menupage {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -93,7 +93,7 @@ Solid one is hidden until user hover or active the regular one */
     }
 }
 
-@mixin heart-placement--menupage($fontsize-destktop: 1.5rem, $fontsize-mobile: 1.5rem) {
+@mixin heart-placement--menupage($fontsize-destktop: 4vw, $fontsize-mobile: 1.5rem) {
     .menu__title {
         position: relative;
     }
