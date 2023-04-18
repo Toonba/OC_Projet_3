@@ -5,4 +5,4 @@ Our mission is to develop a "mobile first" website that lists the menus of gourm
 
 For this project we have learned to use sass
 
-You can take a look to this project [here](https://toonba.github.io/OC-Projet-3-/)
+You can take a look to this project [here](https://toonba.github.io/OC_Projet_3/)
